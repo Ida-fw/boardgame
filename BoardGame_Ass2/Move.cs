@@ -8,6 +8,13 @@ namespace BoardGame_Ass2
         public int Column { get; set; }
         public WildTicTacToeValue Value { get; set; }
 
+        public WildTicTacToeMove(int row, int column, WildTicTacToeValue value)
+        {
+            Row = row;
+            Column = column;
+            Value = value;
+        }
+
         public WildTicTacToeMove(string input)
         {
             if (string.IsNullOrWhiteSpace(input))

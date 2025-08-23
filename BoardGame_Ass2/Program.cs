@@ -21,9 +21,10 @@ class Program
                     Console.WriteLine("Starting Human vs Human mode...");
                     HumanPlayer p1 = new WildTicTacToeHumanPlayer("Alice");
                     HumanPlayer p2 = new WildTicTacToeHumanPlayer("Ida");
-                    Console.WriteLine(p1.Name);
-                    Console.WriteLine(p1.DecideMove());
-                    Console.WriteLine(p2.Name);
+                    WildTicTacToeBoard board = new WildTicTacToeBoard();
+                    board.DisplayBoard();
+                    board.ApplyMove(board.GetRandomMove());
+                    board.DisplayBoard();
                     break;
                 case PlayMode.HumanVsComputer:
                     Console.WriteLine("Starting Human vs Computer mode...");

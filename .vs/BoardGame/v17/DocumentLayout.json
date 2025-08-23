@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\idawa\\IFQ563\\Assignment2\\BoardGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D9B7B187-ADAA-442D-8477-468EA38ADE36}|BoardGame_Ass2\\BoardGame_Ass2.csproj|c:\\users\\idawa\\ifq563\\assignment2\\boardgame\\boardgame_ass2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D9B7B187-ADAA-442D-8477-468EA38ADE36}|BoardGame_Ass2\\BoardGame_Ass2.csproj|solutionrelative:boardgame_ass2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D9B7B187-ADAA-442D-8477-468EA38ADE36}|BoardGame_Ass2\\BoardGame_Ass2.csproj|c:\\users\\idawa\\ifq563\\assignment2\\boardgame\\boardgame_ass2\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9B7B187-ADAA-442D-8477-468EA38ADE36}|BoardGame_Ass2\\BoardGame_Ass2.csproj|solutionrelative:boardgame_ass2\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D9B7B187-ADAA-442D-8477-468EA38ADE36}|BoardGame_Ass2\\BoardGame_Ass2.csproj|c:\\users\\idawa\\ifq563\\assignment2\\boardgame\\boardgame_ass2\\move.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D9B7B187-ADAA-442D-8477-468EA38ADE36}|BoardGame_Ass2\\BoardGame_Ass2.csproj|solutionrelative:boardgame_ass2\\move.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D9B7B187-ADAA-442D-8477-468EA38ADE36}|BoardGame_Ass2\\BoardGame_Ass2.csproj|c:\\users\\idawa\\ifq563\\assignment2\\boardgame\\boardgame_ass2\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9B7B187-ADAA-442D-8477-468EA38ADE36}|BoardGame_Ass2\\BoardGame_Ass2.csproj|solutionrelative:boardgame_ass2\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9B7B187-ADAA-442D-8477-468EA38ADE36}|BoardGame_Ass2\\BoardGame_Ass2.csproj|c:\\users\\idawa\\ifq563\\assignment2\\boardgame\\boardgame_ass2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9B7B187-ADAA-442D-8477-468EA38ADE36}|BoardGame_Ass2\\BoardGame_Ass2.csproj|solutionrelative:boardgame_ass2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D9B7B187-ADAA-442D-8477-468EA38ADE36}|BoardGame_Ass2\\BoardGame_Ass2.csproj|c:\\users\\idawa\\ifq563\\assignment2\\boardgame\\boardgame_ass2\\humanplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D9B7B187-ADAA-442D-8477-468EA38ADE36}|BoardGame_Ass2\\BoardGame_Ass2.csproj|solutionrelative:boardgame_ass2\\humanplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D9B7B187-ADAA-442D-8477-468EA38ADE36}|BoardGame_Ass2\\BoardGame_Ass2.csproj|c:\\users\\idawa\\ifq563\\assignment2\\boardgame\\boardgame_ass2\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D9B7B187-ADAA-442D-8477-468EA38ADE36}|BoardGame_Ass2\\BoardGame_Ass2.csproj|solutionrelative:boardgame_ass2\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D9B7B187-ADAA-442D-8477-468EA38ADE36}|BoardGame_Ass2\\BoardGame_Ass2.csproj|c:\\users\\idawa\\ifq563\\assignment2\\boardgame\\boardgame_ass2\\move.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9B7B187-ADAA-442D-8477-468EA38ADE36}|BoardGame_Ass2\\BoardGame_Ass2.csproj|solutionrelative:boardgame_ass2\\move.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,21 +30,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 10,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "utils.cs",
-              "DocumentMoniker": "C:\\Users\\idawa\\IFQ563\\Assignment2\\BoardGame\\BoardGame_Ass2\\utils.cs",
-              "RelativeDocumentMoniker": "BoardGame_Ass2\\utils.cs",
-              "ToolTip": "C:\\Users\\idawa\\IFQ563\\Assignment2\\BoardGame\\BoardGame_Ass2\\utils.cs",
-              "RelativeToolTip": "BoardGame_Ass2\\utils.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-23T06:04:33.043Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -68,40 +59,66 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "utils.cs",
+              "DocumentMoniker": "C:\\Users\\idawa\\IFQ563\\Assignment2\\BoardGame\\BoardGame_Ass2\\utils.cs",
+              "RelativeDocumentMoniker": "BoardGame_Ass2\\utils.cs",
+              "ToolTip": "C:\\Users\\idawa\\IFQ563\\Assignment2\\BoardGame\\BoardGame_Ass2\\utils.cs",
+              "RelativeToolTip": "BoardGame_Ass2\\utils.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-23T06:04:33.043Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Move.cs",
               "DocumentMoniker": "C:\\Users\\idawa\\IFQ563\\Assignment2\\BoardGame\\BoardGame_Ass2\\Move.cs",
               "RelativeDocumentMoniker": "BoardGame_Ass2\\Move.cs",
               "ToolTip": "C:\\Users\\idawa\\IFQ563\\Assignment2\\BoardGame\\BoardGame_Ass2\\Move.cs",
               "RelativeToolTip": "BoardGame_Ass2\\Move.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAACwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-23T06:01:26.826Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\idawa\\IFQ563\\Assignment2\\BoardGame\\BoardGame_Ass2\\Program.cs",
               "RelativeDocumentMoniker": "BoardGame_Ass2\\Program.cs",
               "ToolTip": "C:\\Users\\idawa\\IFQ563\\Assignment2\\BoardGame\\BoardGame_Ass2\\Program.cs",
               "RelativeToolTip": "BoardGame_Ass2\\Program.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABIAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAIwBcAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-23T04:54:23.025Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "HumanPlayer.cs",
               "DocumentMoniker": "C:\\Users\\idawa\\IFQ563\\Assignment2\\BoardGame\\BoardGame_Ass2\\HumanPlayer.cs",
               "RelativeDocumentMoniker": "BoardGame_Ass2\\HumanPlayer.cs",
               "ToolTip": "C:\\Users\\idawa\\IFQ563\\Assignment2\\BoardGame\\BoardGame_Ass2\\HumanPlayer.cs",
               "RelativeToolTip": "BoardGame_Ass2\\HumanPlayer.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACAAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-23T05:19:33.596Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Board.cs",
+              "DocumentMoniker": "C:\\Users\\idawa\\IFQ563\\Assignment2\\BoardGame\\BoardGame_Ass2\\Board.cs",
+              "RelativeDocumentMoniker": "BoardGame_Ass2\\Board.cs",
+              "ToolTip": "C:\\Users\\idawa\\IFQ563\\Assignment2\\BoardGame\\BoardGame_Ass2\\Board.cs",
+              "RelativeToolTip": "BoardGame_Ass2\\Board.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-23T06:32:47.313Z",
               "EditorCaption": ""
             }
           ]
