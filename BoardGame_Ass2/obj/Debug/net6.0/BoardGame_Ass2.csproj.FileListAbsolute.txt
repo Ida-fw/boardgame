@@ -1,0 +1,14 @@
+C:\Users\idawa\IFQ563\Assignment2\BoardGame\BoardGame_Ass2\bin\Debug\net6.0\BoardGame_Ass2.exe
+C:\Users\idawa\IFQ563\Assignment2\BoardGame\BoardGame_Ass2\bin\Debug\net6.0\BoardGame_Ass2.deps.json
+C:\Users\idawa\IFQ563\Assignment2\BoardGame\BoardGame_Ass2\bin\Debug\net6.0\BoardGame_Ass2.runtimeconfig.json
+C:\Users\idawa\IFQ563\Assignment2\BoardGame\BoardGame_Ass2\bin\Debug\net6.0\BoardGame_Ass2.dll
+C:\Users\idawa\IFQ563\Assignment2\BoardGame\BoardGame_Ass2\bin\Debug\net6.0\BoardGame_Ass2.pdb
+C:\Users\idawa\IFQ563\Assignment2\BoardGame\BoardGame_Ass2\obj\Debug\net6.0\BoardGame_Ass2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\idawa\IFQ563\Assignment2\BoardGame\BoardGame_Ass2\obj\Debug\net6.0\BoardGame_Ass2.AssemblyInfoInputs.cache
+C:\Users\idawa\IFQ563\Assignment2\BoardGame\BoardGame_Ass2\obj\Debug\net6.0\BoardGame_Ass2.AssemblyInfo.cs
+C:\Users\idawa\IFQ563\Assignment2\BoardGame\BoardGame_Ass2\obj\Debug\net6.0\BoardGame_Ass2.csproj.CoreCompileInputs.cache
+C:\Users\idawa\IFQ563\Assignment2\BoardGame\BoardGame_Ass2\obj\Debug\net6.0\BoardGame_Ass2.dll
+C:\Users\idawa\IFQ563\Assignment2\BoardGame\BoardGame_Ass2\obj\Debug\net6.0\refint\BoardGame_Ass2.dll
+C:\Users\idawa\IFQ563\Assignment2\BoardGame\BoardGame_Ass2\obj\Debug\net6.0\BoardGame_Ass2.pdb
+C:\Users\idawa\IFQ563\Assignment2\BoardGame\BoardGame_Ass2\obj\Debug\net6.0\BoardGame_Ass2.genruntimeconfig.cache
+C:\Users\idawa\IFQ563\Assignment2\BoardGame\BoardGame_Ass2\obj\Debug\net6.0\ref\BoardGame_Ass2.dll
