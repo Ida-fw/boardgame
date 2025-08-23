@@ -5,4 +5,10 @@
         HumanVsHuman,
         HumanVsComputer
     }
+
+    enum WildTicTacToeValue
+    {
+        X,
+        O
+    }
 }

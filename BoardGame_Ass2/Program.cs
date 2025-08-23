@@ -1,6 +1,4 @@
 ﻿using BoardGame_Ass2;
-using System;
-using System.Numerics;
 
 class Program
 {
@@ -24,6 +22,7 @@ class Program
                     HumanPlayer p1 = new WildTicTacToeHumanPlayer("Alice");
                     HumanPlayer p2 = new WildTicTacToeHumanPlayer("Ida");
                     Console.WriteLine(p1.Name);
+                    Console.WriteLine(p1.DecideMove());
                     Console.WriteLine(p2.Name);
                     break;
                 case PlayMode.HumanVsComputer:

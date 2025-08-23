@@ -9,26 +9,27 @@
             Name = name;
         }
 
-        public abstract string DecideMove();
+        public abstract Move DecideMove();
     }
 
     class WildTicTacToeHumanPlayer : HumanPlayer
     {
         public WildTicTacToeHumanPlayer(string name) : base(name) { }
 
-        public override string DecideMove()
+        public override WildTicTacToeMove DecideMove()
         {
-            Console.Write($"{Name}, enter your move (row, column and mark X/O): ");
+            Console.Write($"{Name}, enter your move as row,col,value (e.g. 1,2,X): ");
             string? input = Console.ReadLine();
 
-            // Validate: basic check for empty input
-            if (string.IsNullOrWhiteSpace(input))
+            try
             {
-                Console.WriteLine("Invalid move! Please try again.");
-                return DecideMove(); // retry recursively
+                return new WildTicTacToeMove(input ?? "");
             }
-
-            return input.Trim();
+            catch (ArgumentException error)
+            {
+                Console.WriteLine($"Invalid input: {error.Message}");
+                return DecideMove();
+            }
         }
     }
 }

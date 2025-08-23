@@ -12,3 +12,4 @@ C:\Users\idawa\IFQ563\Assignment2\BoardGame\BoardGame_Ass2\obj\Debug\net6.0\refi
 C:\Users\idawa\IFQ563\Assignment2\BoardGame\BoardGame_Ass2\obj\Debug\net6.0\BoardGame_Ass2.pdb
 C:\Users\idawa\IFQ563\Assignment2\BoardGame\BoardGame_Ass2\obj\Debug\net6.0\BoardGame_Ass2.genruntimeconfig.cache
 C:\Users\idawa\IFQ563\Assignment2\BoardGame\BoardGame_Ass2\obj\Debug\net6.0\ref\BoardGame_Ass2.dll
+C:\Users\idawa\IFQ563\Assignment2\BoardGame\BoardGame_Ass2\obj\Debug\net6.0\BoardGame_Ass2.sourcelink.json
