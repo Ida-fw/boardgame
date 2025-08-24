@@ -23,6 +23,11 @@ class Program
                     break;
                 case PlayMode.HumanVsComputer:
                     Console.WriteLine("Starting Human vs Computer mode...");
+                    Player human = new WildTicTacToeHumanPlayer("Player1");
+                    Player computer = new WildTicTacToeComputerPlayer("Player2");
+                    WildTicTacToeBoard board2 = new();
+                    WildTicTacToeGame game2 = new(board2, human, computer, human);
+                    game2.Start();
                     break;
             }
         }

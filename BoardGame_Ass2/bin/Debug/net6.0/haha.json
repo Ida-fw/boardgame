@@ -1,0 +1,12 @@
+{
+  "Moves": [
+    {
+      "Row": 1,
+      "Column": 1,
+      "Value": 0
+    }
+  ],
+  "Player1Name": "Player1",
+  "Player2Name": "Player2",
+  "CurrentPlayerName": "Player2"
+}

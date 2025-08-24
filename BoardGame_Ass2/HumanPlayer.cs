@@ -11,17 +11,20 @@ namespace BoardGame_Ass2
             Name = name;
         }
 
-        public abstract Move DecideMove();
-        public abstract PlayerAction GetAction();
-        public abstract PlayerCommand GetPlayerCommand();
+        public abstract PlayerCommand GetPlayerCommand(Board board);
+    }
+
+    abstract class HumanPlayer : Player
+    {
+        public HumanPlayer(string name) : base(name) { }
         public abstract void Help();
     }
 
-    class WildTicTacToeHumanPlayer : Player
+    class WildTicTacToeHumanPlayer : HumanPlayer
     {
         public WildTicTacToeHumanPlayer(string name) : base(name) { }
 
-        public override PlayerCommand GetPlayerCommand()
+        public override PlayerCommand GetPlayerCommand(Board board)
         {
             while (true)
             {
@@ -45,9 +48,9 @@ namespace BoardGame_Ass2
                         case "--redo":
                             return new ActionCommand(PlayerAction.Redo, null);
                         case "--save":
-                            return new ActionCommand(PlayerAction.SaveGame, arg ?? "wild-tic-tac-toe.json");
+                            return new ActionCommand(PlayerAction.SaveGame, arg);
                         case "--load":
-                            return new ActionCommand(PlayerAction.LoadGame, arg ?? "wild-tic-tac-toe.json");
+                            return new ActionCommand(PlayerAction.LoadGame, arg);
                         default:
                             Console.WriteLine("Unknown action. Try again.");
                             break;
@@ -82,48 +85,16 @@ namespace BoardGame_Ass2
             Console.WriteLine(" - Enter --help to show command help.");
             Console.WriteLine();
         }
+    }
 
-        public override WildTicTacToeMove DecideMove()
+    class WildTicTacToeComputerPlayer : Player
+    {
+        public WildTicTacToeComputerPlayer(string name) : base(name) { }
+
+        public override PlayerCommand GetPlayerCommand(Board board)
         {
-            Console.Write($"{Name}'s turn: ");
-            string? input = Console.ReadLine();
-
-            try
-            {
-                return new WildTicTacToeMove(input ?? "");
-            }
-            catch (ArgumentException error)
-            {
-                Console.WriteLine($"Invalid input: {error.Message}");
-                return DecideMove();
-            }
-        }
-
-        public override PlayerAction GetAction()
-        {
-            Console.Write($"{Name}, any action before move on to next player? Enter an action (--undo, --redo, --save <path>, --load <path>, --help) or just enter to continue: ");
-            while (true)
-            {
-                string? input = Console.ReadLine();
-                if (string.IsNullOrWhiteSpace(input)) return PlayerAction.Continue;
-                var command = input.Trim().ToLowerInvariant();
-                switch (command)
-                {
-                    case "--undo":
-                        return PlayerAction.Undo;
-                    case "--redo":
-                        return PlayerAction.Redo;
-                    case "--help":
-                        return PlayerAction.ShowHelp;
-                    case "--save":
-                        return PlayerAction.SaveGame;
-                    case "--load":
-                        return PlayerAction.LoadGame;
-                    default:
-                        Console.WriteLine("Unknown action. Try again.");
-                        break;
-                }
-            }
+            Console.WriteLine($"Computer {Name}'s turn: ");
+            return new MoveCommand(board.GetRandomMove());
         }
     }
 }

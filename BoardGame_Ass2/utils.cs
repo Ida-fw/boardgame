@@ -17,8 +17,6 @@
         Undo,
         Redo,
         SaveGame,
-        LoadGame,
-        ShowHelp,
-        Continue
+        LoadGame
     }
 }

@@ -1,0 +1,27 @@
+{
+  "Moves": [
+    {
+      "Row": 1,
+      "Column": 1,
+      "Value": 0
+    },
+    {
+      "Row": 2,
+      "Column": 0,
+      "Value": 0
+    },
+    {
+      "Row": 1,
+      "Column": 2,
+      "Value": 0
+    },
+    {
+      "Row": 2,
+      "Column": 2,
+      "Value": 1
+    }
+  ],
+  "Player1Name": "Player1",
+  "Player2Name": "Player2",
+  "CurrentPlayerName": "Player1"
+}

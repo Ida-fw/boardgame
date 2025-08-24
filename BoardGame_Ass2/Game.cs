@@ -51,30 +51,6 @@ namespace BoardGame_Ass2
             return false;
         }
 
-        protected void ApplyMove(Move move)
-        {
-            Board.ApplyMove(move);
-            UndoStack.Push(move);
-            RedoStack.Clear();
-            Board.DisplayBoard();
-        }
-
-        protected PlayerAction GetPlayerAction()
-        {
-            var action = CurrentPlayer.GetAction();
-            switch (action)
-            {
-                case PlayerAction.Undo:
-                    Undo(); SwapCurrentPlayer(); break;
-                case PlayerAction.Redo:
-                    Redo(); break;
-                case PlayerAction.Continue:
-                    break;
-                default: break;
-            }
-            return action;
-        }
-
         protected void SwapCurrentPlayer() =>
             CurrentPlayer = ReferenceEquals(CurrentPlayer, Player1) ? Player2 : Player1;
     }
@@ -88,12 +64,13 @@ namespace BoardGame_Ass2
 
         public override void Start()
         {
+            Console.WriteLine("========================");
             Console.WriteLine("=== Wild Tic-Tac-Toe ===");
-            CurrentPlayer.Help();
+            Console.WriteLine("========================");
 
             while (!Board.IsGameOver())
             {
-                PlayerCommand command = CurrentPlayer.GetPlayerCommand();
+                PlayerCommand command = CurrentPlayer.GetPlayerCommand(Board);
                 switch (command)
                 {
                     case MoveCommand m:
@@ -102,7 +79,10 @@ namespace BoardGame_Ass2
                             Console.WriteLine("That move is not valid. Try again.");
                             continue;
                         }
-                        ApplyMove(m.Move);
+                        Board.ApplyMove(m.Move);
+                        UndoStack.Push(m.Move);
+                        RedoStack.Clear();
+                        Board.DisplayBoard();
                         SwapCurrentPlayer();
                         break;
                     case ActionCommand a:
@@ -110,8 +90,11 @@ namespace BoardGame_Ass2
                         {
                             case PlayerAction.Undo: if (Undo()) SwapCurrentPlayer(); break;
                             case PlayerAction.Redo: if (Redo()) SwapCurrentPlayer(); break;
-                                //case PlayerAction.SaveGame: SaveGame(a.Argument ?? "wild.json"); break;
-                                //case PlayerAction.LoadGame: LoadGame(a.Argument ?? "wild.json"); break;
+                            case PlayerAction.SaveGame: SaveGame(a.Argument ?? "wild-tic-tac-toe.json"); return;
+                            case PlayerAction.LoadGame:
+                                if (UndoStack.Count > 0 || RedoStack.Count > 0) Console.WriteLine("Unable to load game in the middle of the current game.");
+                                else LoadGame(a.Argument ?? "wild-tic-tac-toe.json");
+                                break;
                         }
                         break;
                     default: break;
@@ -138,14 +121,15 @@ namespace BoardGame_Ass2
                 var state = new SaveState
                 {
                     Moves = history,
-                    // Convention: Player1 always starts when (re)playing the saved moves.
                     Player1Name = Player1.Name,
                     Player2Name = Player2.Name,
+                    CurrentPlayerName = CurrentPlayer.Name,
                 };
 
                 var json = JsonSerializer.Serialize(state, new JsonSerializerOptions { WriteIndented = true });
-                File.WriteAllText(filePath, json);
-                Console.WriteLine($"Saved game to: {filePath}");
+                var fullPath = Path.GetFullPath(filePath);
+                File.WriteAllText(fullPath, json);
+                Console.WriteLine($"Saved game to: {fullPath}");
             }
             catch (Exception ex)
             {
@@ -159,30 +143,27 @@ namespace BoardGame_Ass2
             {
                 if (!File.Exists(filePath))
                 {
-                    Console.WriteLine("Save file not found.");
+                    Console.WriteLine("File not found.");
                     return;
                 }
 
                 var json = File.ReadAllText(filePath);
                 var state = JsonSerializer.Deserialize<SaveState>(json) ?? throw new InvalidOperationException("Corrupt save file.");
 
-                // Return board to initial state by undoing all known moves (if any)
-                while (Undo()) { }
-                RedoStack.Clear();
+                // Set the current player
+                CurrentPlayer = state.CurrentPlayerName == Player1.Name ? Player1 : Player2;
 
-                // Convention: Player1 starts when we replay
-                CurrentPlayer = Player1;
-
-                // Replay in order
+                // Replay
                 foreach (var dto in state.Moves)
                 {
                     var move = new WildTicTacToeMove(dto.Row, dto.Column, dto.Value);
                     if (!Board.IsMoveValid(move))
                         throw new InvalidOperationException($"Saved move not valid on step ({dto.Row},{dto.Column},{dto.Value}).");
-                    ApplyMove(move);
+                    Board.ApplyMove(move);
                 }
 
                 Console.WriteLine($"Loaded game from: {filePath}");
+                Board.DisplayBoard();
             }
             catch (Exception ex)
             {
@@ -190,15 +171,14 @@ namespace BoardGame_Ass2
             }
         }
 
-        // ---- helpers ----
 
-        // DTOs for robust, non-polymorphic save files
+        // DTOs for file saving
         private sealed class SaveState
         {
             public List<MoveDto> Moves { get; set; } = new();
             public string? Player1Name { get; set; }
             public string? Player2Name { get; set; }
-            public string? Mode { get; set; }
+            public string? CurrentPlayerName { get; set; }
         }
 
         private sealed class MoveDto
