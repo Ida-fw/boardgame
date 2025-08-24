@@ -11,4 +11,14 @@
         X,
         O
     }
+
+    enum PlayerAction
+    {
+        Undo,
+        Redo,
+        SaveGame,
+        LoadGame,
+        ShowHelp,
+        Continue
+    }
 }

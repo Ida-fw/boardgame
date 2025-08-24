@@ -36,7 +36,7 @@ namespace BoardGame_Ass2
 
         public override bool IsMoveValid(Move move)
         {
-            if (move is not WildTicTacToeMove wm) throw new ArgumentException("Expected WildTicTacToeMove.", nameof(move));
+            if (move is not WildTicTacToeMove wm) return false;
             if (!InBoardBoundary(wm.Row, wm.Column)) return false;
             return !boardGrid[wm.Row, wm.Column].HasValue;
         }

@@ -4,10 +4,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        //Player p1 = new HumanPlayer { Name = "Alice" };
-        //Player p2 = new ComputerPlayer { Name = "AI" };
-        //Game game = new NumericalTicTacToe(p1, p2);
-        //game.Start();
         Console.WriteLine("Choose play mode: 0: Human Vs Human, 1: Human Vs Computer");
         string? userInput = Console.ReadLine();
 
@@ -19,12 +15,11 @@ class Program
             {
                 case PlayMode.HumanVsHuman:
                     Console.WriteLine("Starting Human vs Human mode...");
-                    HumanPlayer p1 = new WildTicTacToeHumanPlayer("Alice");
-                    HumanPlayer p2 = new WildTicTacToeHumanPlayer("Ida");
+                    Player p1 = new WildTicTacToeHumanPlayer("Alice");
+                    Player p2 = new WildTicTacToeHumanPlayer("Ida");
                     WildTicTacToeBoard board = new WildTicTacToeBoard();
-                    board.DisplayBoard();
-                    board.ApplyMove(board.GetRandomMove());
-                    board.DisplayBoard();
+                    WildTicTacToeGame game = new WildTicTacToeGame(board, p1, p2, p1);
+                    game.Start();
                     break;
                 case PlayMode.HumanVsComputer:
                     Console.WriteLine("Starting Human vs Computer mode...");
