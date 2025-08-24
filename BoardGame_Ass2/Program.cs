@@ -15,10 +15,10 @@ class Program
             {
                 case PlayMode.HumanVsHuman:
                     Console.WriteLine("Starting Human vs Human mode...");
-                    Player p1 = new WildTicTacToeHumanPlayer("Alice");
-                    Player p2 = new WildTicTacToeHumanPlayer("Ida");
-                    WildTicTacToeBoard board = new WildTicTacToeBoard();
-                    WildTicTacToeGame game = new WildTicTacToeGame(board, p1, p2, p1);
+                    Player p1 = new WildTicTacToeHumanPlayer("Player1");
+                    Player p2 = new WildTicTacToeHumanPlayer("Player2");
+                    WildTicTacToeBoard board = new();
+                    WildTicTacToeGame game = new(board, p1, p2, p1);
                     game.Start();
                     break;
                 case PlayMode.HumanVsComputer:

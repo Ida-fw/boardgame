@@ -14,7 +14,6 @@ namespace BoardGame_Ass2
         public abstract void Start();
         public abstract void SaveGame(string filePath);
         public abstract void LoadGame(string filePath);
-        public abstract void Help();
 
         protected Game(Board board, Player player1, Player player2, Player currentPlayer)
         {
@@ -28,12 +27,13 @@ namespace BoardGame_Ass2
         {
             if (UndoStack.Count > 0)
             {
-                var m = UndoStack.Pop();
-                Board.UndoMove(m);
-                RedoStack.Push(m);
-                SwapCurrentPlayer();
+                var mv = UndoStack.Pop();
+                Board.UndoMove(mv);
+                RedoStack.Push(mv);
+                Board.DisplayBoard();
                 return true;
             }
+            Console.WriteLine("There is nothing to undo.");
             return false;
         }
 
@@ -41,12 +41,13 @@ namespace BoardGame_Ass2
         {
             if (RedoStack.Count > 0)
             {
-                var m = RedoStack.Pop();
-                Board.ApplyMove(m);
-                UndoStack.Push(m);
-                SwapCurrentPlayer();
+                var mv = RedoStack.Pop();
+                Board.ApplyMove(mv);
+                UndoStack.Push(mv);
+                Board.DisplayBoard();
                 return true;
             }
+            Console.WriteLine("There is nothing to redo.");
             return false;
         }
 
@@ -55,8 +56,23 @@ namespace BoardGame_Ass2
             Board.ApplyMove(move);
             UndoStack.Push(move);
             RedoStack.Clear();
-            Console.WriteLine(CurrentPlayer.GetAction());
-            SwapCurrentPlayer();
+            Board.DisplayBoard();
+        }
+
+        protected PlayerAction GetPlayerAction()
+        {
+            var action = CurrentPlayer.GetAction();
+            switch (action)
+            {
+                case PlayerAction.Undo:
+                    Undo(); SwapCurrentPlayer(); break;
+                case PlayerAction.Redo:
+                    Redo(); break;
+                case PlayerAction.Continue:
+                    break;
+                default: break;
+            }
+            return action;
         }
 
         protected void SwapCurrentPlayer() =>
@@ -73,36 +89,42 @@ namespace BoardGame_Ass2
         public override void Start()
         {
             Console.WriteLine("=== Wild Tic-Tac-Toe ===");
-            Help();
+            CurrentPlayer.Help();
 
             while (!Board.IsGameOver())
             {
-                Board.DisplayBoard();
-                Move move = CurrentPlayer.DecideMove();
-                if (!Board.IsMoveValid(move))
+                PlayerCommand command = CurrentPlayer.GetPlayerCommand();
+                switch (command)
                 {
-                    Console.WriteLine("That move is not valid. Try again.");
-                    continue;
+                    case MoveCommand m:
+                        if (!Board.IsMoveValid(m.Move))
+                        {
+                            Console.WriteLine("That move is not valid. Try again.");
+                            continue;
+                        }
+                        ApplyMove(m.Move);
+                        SwapCurrentPlayer();
+                        break;
+                    case ActionCommand a:
+                        switch (a.Action)
+                        {
+                            case PlayerAction.Undo: if (Undo()) SwapCurrentPlayer(); break;
+                            case PlayerAction.Redo: if (Redo()) SwapCurrentPlayer(); break;
+                                //case PlayerAction.SaveGame: SaveGame(a.Argument ?? "wild.json"); break;
+                                //case PlayerAction.LoadGame: LoadGame(a.Argument ?? "wild.json"); break;
+                        }
+                        break;
+                    default: break;
                 }
-                ApplyMove(move);
+
             }
 
-            Console.WriteLine();
+            Console.WriteLine("=================");
             Console.WriteLine("=== GAME OVER ===");
+            Console.WriteLine("=================");
             Board.DisplayBoard();
         }
 
-        public override void Help()
-        {
-            Console.WriteLine("How to play:");
-            Console.WriteLine(" - Coordinates are 0..2 for row and column.");
-            Console.WriteLine(" - On your turn, enter: row,col,value  e.g. 1,2,X");
-            Console.WriteLine(" - In Wild Tic-Tac-Toe you may place either X or O on your turn.");
-            Console.WriteLine(" - The game ends when any 3-in-a-row of X or of O is formed, or the board is full.");
-            Console.WriteLine(" - Enter --undo to undo the previous steps.");
-            Console.WriteLine(" - Enter --redo to redo the undo steps.");
-            Console.WriteLine(" - Enter --save to save the game anytime.");
-        }
 
         public override void SaveGame(string filePath)
         {
